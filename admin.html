@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DigitalNexusX Admin Dashboard</title><link rel="stylesheet" href="/static/admin.css"></head>
+<body>
+<div id="loginBox" class="card login">
+<h1>DigitalNexusX</h1><p>Admin Dashboard Login</p>
+<input id="username" placeholder="Username" value="admin"><input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button><p id="loginMsg"></p></div>
+<div id="app" style="display:none">
+<header><h1>DigitalNexusX Dashboard</h1><button onclick="logout()">Logout</button></header>
+<section class="cards"><div class="card"><h3>Total Leads</h3><span id="totalLeads">0</span></div><div class="card"><h3>Leads Today</h3><span id="leadsToday">0</span></div><div class="card"><h3>New Leads</h3><span id="newLeads">0</span></div><div class="card"><h3>Converted</h3><span id="converted">0</span></div><div class="card"><h3>Conversion %</h3><span id="convPct">0</span></div></section>
+<h2>Recent Leads</h2><div id="recent"></div>
+<h2>Leads</h2><input id="search" placeholder="Search name/email/phone" oninput="loadLeads()"><select id="statusFilter" onchange="loadLeads()"><option value="">All Status</option><option>New</option><option>Contacted</option><option>Qualified</option><option>Converted</option><option>Lost</option></select><button onclick="exportCSV()">Export CSV</button><div id="leads"></div>
+<h2>Consultations</h2><div id="consultations"></div>
+<h2>Update Homepage Stats</h2><form id="statsForm"><label>Leads Generated <input name="leads_generated" type="number"></label><label>Sales Delivered <input name="sales_delivered" type="number"></label><label>Cost Per Lead <input name="cost_per_lead" type="number" step="any"></label><label>ROAS <input name="roas" type="number" step="any"></label><label>Growth % <input name="growth_percent" type="number" step="any"></label><button>Save Stats</button></form>
+<h2>Services</h2><div id="services"></div>
+<h2>Site Settings</h2><form id="settingsForm"><label>Phone <input name="phone"></label><label>WhatsApp <input name="whatsapp"></label><label>Email <input name="email"></label><label>Office <input name="office"></label><button>Save Settings</button></form>
+</div><script src="/static/admin.js"></script></body></html>
